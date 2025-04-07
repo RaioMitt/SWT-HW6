@@ -18,20 +18,20 @@ public class TestHelper {
     final int waitForResposeTime = 4;
 	
 	// here write a link to your admin website (e.g. http://my-app.herokuapp.com/admin)
-    String baseUrlAdmin = "http://127.0.0.1:3000/admin";
+    String baseUrlAdmin = "http://127.0.0.1:3001/admin";
 	
 	// here write a link to your website (e.g. http://my-app.herokuapp.com/)
-    String baseUrl = "http://127.0.0.1:3000/";
+    String baseUrl = "http://127.0.0.1:3001/";
 
     @Before
     public void setUp(){
 
         // if you use Chrome:
-       // System.setProperty("webdriver.chrome.driver", "C:\\Users\\raiomitt\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
-       // driver = new ChromeDriver();
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\raiomitt\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+        driver = new ChromeDriver();
 
-        System.setProperty("webdriver.gecko.driver", "C:\\Users\\elsvalte\\Downloads\\geckodriver-v0.30.0-win64\\geckodriver.exe");
-        driver = new FirefoxDriver();
+        //System.setProperty("webdriver.gecko.driver", "C:\\Users\\elsvalter\\Downloads\\geckodriver-v0.30.0-win64\\geckodriver.exe");
+        //driver = new FirefoxDriver();
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(baseUrl);

@@ -599,7 +599,7 @@ public class BasicTest extends TestHelper {
         //adding product 2
         cartButton = driver.findElement(By.xpath("/html/body/div[4]/div[2]/div[5]/div[2]/form/input[1]"));
         cartButton.click();
-
+        waitForElementById("checkout_button");
 
         //remove product 1 from cart
         WebElement deleteButton = driver.findElement(By.id("delete_button"));
@@ -623,6 +623,7 @@ public class BasicTest extends TestHelper {
         //adding product 2
         cartButton = driver.findElement(By.xpath("/html/body/div[4]/div[2]/div[5]/div[2]/form/input[1]"));
         cartButton.click();
+        waitForElementById("checkout_button");
 
         // click on empty cart
         WebElement emptyCartButton = driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/form[1]/input[2]"));
@@ -645,6 +646,7 @@ public class BasicTest extends TestHelper {
         for (int i = 0; i < 10; i++) {
             cartButton.click();
         }
+        waitForElementById("checkout_button");
 
         // click on the checkout button
         WebElement chechoutButton = driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/form[2]/input"));
@@ -687,6 +689,7 @@ public class BasicTest extends TestHelper {
         for (int i = 0; i < 10; i++) {
             cartButton.click();
         }
+        waitForElementById("checkout_button");
 
         // click on the checkout button
         WebElement chechoutButton = driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/form[2]/input"));
@@ -719,7 +722,7 @@ public class BasicTest extends TestHelper {
 
 
     @Test
-    public void checkoutCreditCard(){
+    public void checkoutCreditCard() throws InterruptedException {
         driver.get(baseUrl);
         waitForElementById("column2");
 
@@ -729,8 +732,10 @@ public class BasicTest extends TestHelper {
             cartButton.click();
         }
 
+        waitForElementById("checkout_button");
+
         // click on the checkout button
-        WebElement chechoutButton = driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/form[2]/input"));
+        WebElement chechoutButton = driver.findElement(By.xpath("//input[@value='Checkout']"));
         chechoutButton.click();
 
         waitForElementById("order_page");
@@ -770,6 +775,7 @@ public class BasicTest extends TestHelper {
         for (int i = 0; i < 5; i++) {
             cartButton.click();
         }
+        waitForElementById("checkout_button");
 
         // click on the checkout button
         WebElement chechoutButton = driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/form[2]/input"));
